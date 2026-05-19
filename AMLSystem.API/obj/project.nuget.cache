@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "5NvVpqFvnMY=",
+  "success": true,
+  "projectFilePath": "C:\\AnA_AML_System\\AnA_AML_System\\AMLSystem.API\\AMLSystem.API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.8\\microsoft.aspnetcore.openapi.10.0.8.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

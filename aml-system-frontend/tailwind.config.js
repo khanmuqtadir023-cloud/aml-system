@@ -13,6 +13,7 @@ module.exports = {
         'aml-pink-accent': '#fce7f3'  // Light pink accents for interactive states
       }
     },
+    extend: {},
   },
   plugins: [],
 }

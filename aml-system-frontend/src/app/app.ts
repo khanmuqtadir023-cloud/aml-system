@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { SidebarComponent } from './core/sidebar/sidebar'; // Sidebar ko import kiya
+import { RouterOutlet } from '@angular/router'; 
+import { CommonModule } from '@angular/common'; 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [SidebarComponent], // Yahan list mein SidebarComponent daal diya
+  imports: [RouterOutlet, CommonModule], // 👈 Yahan se SidebarComponent hata diya kyunke ab ye direct route se chal raha hai
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

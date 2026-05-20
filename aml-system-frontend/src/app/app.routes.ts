@@ -1,37 +1,40 @@
 import { Routes } from '@angular/router';
-// Apne components ko sahi se import karein (paths check kar lijiyega)
 import { Login } from '../app/components/login/login'; 
 import { Signup } from '../app/components/signup/signup';
+import { SidebarComponent } from './core/sidebar/sidebar';
+import { DashboardComponent } from './modules/watchlist/dashboard/dashboard'; 
+import { NewScreeningComponent } from './modules/new-screening/new-screening'; 
+import { ScreeningResultsComponent } from './modules/watchlist/screening-results/screening-results'; 
+import { MatchDetailsComponent } from './modules/watchlist/match-details/match-details';
+import { MatchReviewComponent } from './modules/watchlist/match-review/match-review'; 
+import { ScreeningHistoryComponent } from './modules/watchlist/screening-history/screening-history';
+
 
 export const routes: Routes = [
-  // 1. Default Route: Agar user khali URL par aaye toh direct login par le jao
   { 
     path: '', 
-    redirectTo: 'login', 
+    redirectTo: 'watchlist-screening/dashboard', 
     pathMatch: 'full' 
   },
+  { path: 'login', component: Login },
+  { path: 'signup', component: Signup },
 
-  // 2. Auth Routes (Bina Sidebar ke load honge)
   { 
-    path: 'login', 
-    component: Login 
+    path: 'watchlist-screening', 
+    component: SidebarComponent,
+    children: [
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'new-screening', component: NewScreeningComponent },
+      { path: 'screening-results', component: ScreeningResultsComponent },
+      { path: 'match-details', component: MatchDetailsComponent },
+      
+      // 👈 NEW ROUTE ADDED: Match Review
+      { path: 'match-review', component: MatchReviewComponent },
+      { path: 'screening-history', component: ScreeningHistoryComponent },
+      
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
+    ]
   },
-  { 
-    path: 'signup', 
-    component: Signup 
-  },
 
-  // 3. Dashboard / Screening Route (Yahan user login ke baad aayega)
-  // Chonke humne app.html me Sidebar lagaya hua hai, toh is route par aate hi Sidebar khud khul jayega
-  // { 
-  //   path: 'watchlist-screening', 
-  //   loadComponent: () => import('./modules/watchlist/watchlist').then(m => m.WatchlistComponent)
-  //   // 💡 Note: Agar aap ka component normal import hai toh direct 'component: WatchlistComponent' bhi likh sakte hain
-  // },
-
-  // 4. Wildcard Route: Agar koi galat URL likhe toh login par phek do
-  { 
-    path: '**', 
-    redirectTo: 'login' 
-  }
+  { path: '**', redirectTo: 'watchlist-screening/dashboard' }
 ];

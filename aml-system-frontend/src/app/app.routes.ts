@@ -9,30 +9,42 @@ import { MatchDetailsComponent } from './modules/watchlist/match-details/match-d
 import { MatchReviewComponent } from './modules/watchlist/match-review/match-review'; 
 import { ScreeningHistoryComponent } from './modules/watchlist/screening-history/screening-history';
 
+// Transaction Components
+import { TransactionListComponent } from './components/transaction-list/transaction-list'; 
+import { TransactionDetailComponent } from './components/transaction-detail/transaction-detail'; 
 
 export const routes: Routes = [
-  { 
-    path: '', 
-    redirectTo: 'watchlist-screening/dashboard', 
-    pathMatch: 'full' 
-  },
   { path: 'login', component: Login },
   { path: 'signup', component: Signup },
 
-  { 
-    path: 'watchlist-screening', 
+  {
+    path: '',
     component: SidebarComponent,
     children: [
-      { path: 'dashboard', component: DashboardComponent },
-      { path: 'new-screening', component: NewScreeningComponent },
-      { path: 'screening-results', component: ScreeningResultsComponent },
-      { path: 'match-details', component: MatchDetailsComponent },
+      { path: '', redirectTo: 'watchlist-screening/dashboard', pathMatch: 'full' },
       
-      // 👈 NEW ROUTE ADDED: Match Review
-      { path: 'match-review', component: MatchReviewComponent },
-      { path: 'screening-history', component: ScreeningHistoryComponent },
-      
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
+      // WATCHLIST SCREENING MODULE
+      { 
+        path: 'watchlist-screening', 
+        children: [
+          { path: 'dashboard', component: DashboardComponent },
+          { path: 'new-screening', component: NewScreeningComponent },
+          { path: 'screening-results', component: ScreeningResultsComponent },
+          { path: 'match-details', component: MatchDetailsComponent },
+          { path: 'match-review', component: MatchReviewComponent },
+          { path: 'screening-history', component: ScreeningHistoryComponent },
+          { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
+        ]
+      },
+
+      // TRANSACTION MONITORING MODULE
+      {
+        path: 'transactions',
+        children: [
+          { path: '', component: TransactionListComponent },
+          { path: ':id', component: TransactionDetailComponent }
+        ]
+      }
     ]
   },
 

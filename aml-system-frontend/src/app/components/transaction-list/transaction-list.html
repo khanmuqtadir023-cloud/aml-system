@@ -1,0 +1,127 @@
+<div class="h-full">
+  
+  <div class="text-slate-500 text-sm mb-2 font-medium">
+    Transaction Monitoring <span class="mx-2">/</span> <span class="text-[#002D58] font-semibold">Transaction List</span>
+  </div>
+
+  <div class="flex justify-between items-center mb-6">
+    <h2 class="text-2xl font-bold text-slate-800 tracking-tight">Transaction List</h2>
+  </div>
+
+  <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+    
+    <div class="p-5 border-b border-slate-200 flex justify-between items-center bg-white flex-wrap gap-4">
+      <h3 class="text-lg font-semibold text-slate-800">Recent Transactions</h3>
+      
+      <div class="flex items-center gap-3">
+        <div class="relative">
+          <svg class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <input type="text" 
+                 [(ngModel)]="searchTerm" 
+                 (ngModelChange)="applyFilters()" 
+                 placeholder="Search ID or Name..." 
+                 class="pl-9 pr-4 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002D58] focus:border-transparent w-64">
+        </div>
+
+        <div class="relative">
+          <button (click)="toggleDropdown()" 
+                  class="px-4 py-2 w-36 border border-slate-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#002D58] focus:border-transparent cursor-pointer font-medium text-slate-700 flex justify-between items-center shadow-sm hover:bg-slate-50 transition-colors">
+            <span>{{ selectedStatus === 'All' ? 'All Status' : selectedStatus }}</span>
+            <svg class="w-4 h-4 text-slate-500 transition-transform duration-200" 
+                 [ngClass]="{'rotate-180': isDropdownOpen}" 
+                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+
+          <div *ngIf="isDropdownOpen" (click)="isDropdownOpen = false" class="fixed inset-0 z-10"></div>
+
+          <div *ngIf="isDropdownOpen" class="absolute right-0 mt-2 w-40 bg-white rounded-xl shadow-lg border border-slate-100 z-20 overflow-hidden py-1">
+            <button *ngFor="let status of statusOptions" 
+                    (click)="selectStatus(status)"
+                    class="w-full text-left px-4 py-2.5 text-sm font-semibold transition-colors flex items-center justify-between"
+                    [ngClass]="{
+                      'bg-[#002D58] text-white': selectedStatus === status,
+                      'text-slate-600 hover:bg-slate-50 hover:text-[#002D58]': selectedStatus !== status
+                    }">
+              {{ status === 'All' ? 'All Status' : status }}
+              
+              <svg *ngIf="selectedStatus === status" class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </button>
+          </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="overflow-x-auto w-full">
+      <table class="w-full text-left border-collapse whitespace-nowrap">
+        
+        <thead>
+          <tr class="bg-slate-50 border-b border-slate-200 text-xs uppercase text-slate-500 font-bold tracking-wider">
+            <th class="px-6 py-4">Transaction ID</th>
+            <th class="px-6 py-4">Account Number</th>
+            <th class="px-6 py-4">Customer Name</th>
+            <th class="px-6 py-4">Amount</th>
+            <th class="px-6 py-4">Type</th>
+            <th class="px-6 py-4">Date & Time</th>
+            <th class="px-6 py-4 text-center">Status</th>
+            <th class="px-6 py-4 text-center">Risk Score</th>
+            <th class="px-6 py-4 text-center">Action</th>
+          </tr>
+        </thead>
+        
+        <tbody class="text-sm text-slate-700 divide-y divide-slate-200">
+          
+          <tr *ngFor="let txn of filteredTransactions" class="hover:bg-slate-50 transition-colors">
+            <td class="px-6 py-4 font-medium text-slate-900">{{ txn.transactionId }}</td>
+            <td class="px-6 py-4">{{ txn.accountNumber }}</td>
+            <td class="px-6 py-4 font-semibold">{{ txn.customerName }}</td>
+            <td class="px-6 py-4 font-bold text-slate-900">{{ txn.amount | currency:txn.currency }}</td>
+            <td class="px-6 py-4">
+              <span class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded-md text-xs font-bold">{{ txn.type }}</span>
+            </td>
+            <td class="px-6 py-4 text-slate-500">{{ txn.transactionDate | date:'short' }}</td>
+            
+            <td class="px-6 py-4 text-center">
+              <span class="px-3 py-1 rounded-full text-xs font-bold border"
+                    [ngClass]="{
+                      'bg-blue-50 text-blue-700 border-blue-200': txn.status === 'Pending',
+                      'bg-emerald-50 text-emerald-700 border-emerald-200': txn.status === 'Normal',
+                      'bg-amber-50 text-amber-700 border-amber-200': txn.status === 'Flagged',
+                      'bg-rose-50 text-rose-700 border-rose-200': txn.status === 'Blocked'
+                    }">
+                {{ txn.status }}
+              </span>
+            </td>
+
+            <td class="px-6 py-4 text-center font-black text-base"
+                [ngClass]="{
+                  'text-emerald-600': txn.riskScore < 30,
+                  'text-amber-500': txn.riskScore >= 30 && txn.riskScore < 70,
+                  'text-rose-600': txn.riskScore >= 70
+                }">
+              {{ txn.riskScore }}
+            </td>
+
+            <td class="px-6 py-4 text-center">
+              <button (click)="goToDetails(txn.transactionId)" class="cursor-pointer px-4 py-1.5 text-xs font-bold text-[#002D58] border-2 border-[#002D58] rounded-md hover:bg-[#002D58] hover:text-white transition-colors">
+                Details
+              </button>
+            </td>
+          </tr>
+
+          <tr *ngIf="filteredTransactions.length === 0">
+            <td colspan="9" class="px-6 py-16 text-center text-slate-400">
+              <div class="flex flex-col items-center justify-center">
+                <svg class="w-14 h-14 mb-4 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+                <span class="text-lg font-semibold text-slate-600">No matching records</span>
+                <span class="text-sm mt-1 text-slate-500">Try adjusting your search or filter.</span>
+              </div>
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

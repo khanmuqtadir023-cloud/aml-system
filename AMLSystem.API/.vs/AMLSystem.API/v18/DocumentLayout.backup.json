@@ -1,0 +1,133 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\AnA_AML_System\\AMLSystem.API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7762B61A-E915-BCE6-3964-CC8C0D12D24B}|AMLSystem.API.csproj|c:\\ana_aml_system\\amlsystem.api\\migrations\\20260520215217_addauditlogtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7762B61A-E915-BCE6-3964-CC8C0D12D24B}|AMLSystem.API.csproj|solutionrelative:migrations\\20260520215217_addauditlogtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7762B61A-E915-BCE6-3964-CC8C0D12D24B}|AMLSystem.API.csproj|c:\\ana_aml_system\\amlsystem.api\\controllers\\transactionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7762B61A-E915-BCE6-3964-CC8C0D12D24B}|AMLSystem.API.csproj|solutionrelative:controllers\\transactionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7762B61A-E915-BCE6-3964-CC8C0D12D24B}|AMLSystem.API.csproj|c:\\ana_aml_system\\amlsystem.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7762B61A-E915-BCE6-3964-CC8C0D12D24B}|AMLSystem.API.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7762B61A-E915-BCE6-3964-CC8C0D12D24B}|AMLSystem.API.csproj|c:\\ana_aml_system\\amlsystem.api\\models\\auditlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7762B61A-E915-BCE6-3964-CC8C0D12D24B}|AMLSystem.API.csproj|solutionrelative:models\\auditlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7762B61A-E915-BCE6-3964-CC8C0D12D24B}|AMLSystem.API.csproj|c:\\ana_aml_system\\amlsystem.api\\models\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7762B61A-E915-BCE6-3964-CC8C0D12D24B}|AMLSystem.API.csproj|solutionrelative:models\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7762B61A-E915-BCE6-3964-CC8C0D12D24B}|AMLSystem.API.csproj|c:\\ana_aml_system\\amlsystem.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7762B61A-E915-BCE6-3964-CC8C0D12D24B}|AMLSystem.API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7762B61A-E915-BCE6-3964-CC8C0D12D24B}|AMLSystem.API.csproj|c:\\ana_aml_system\\amlsystem.api\\migrations\\20260520114503_addtransactiontable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7762B61A-E915-BCE6-3964-CC8C0D12D24B}|AMLSystem.API.csproj|solutionrelative:migrations\\20260520114503_addtransactiontable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20260520215217_AddAuditLogTable.cs",
+              "DocumentMoniker": "C:\\AnA_AML_System\\AMLSystem.API\\Migrations\\20260520215217_AddAuditLogTable.cs",
+              "RelativeDocumentMoniker": "Migrations\\20260520215217_AddAuditLogTable.cs",
+              "ToolTip": "C:\\AnA_AML_System\\AMLSystem.API\\Migrations\\20260520215217_AddAuditLogTable.cs",
+              "RelativeToolTip": "Migrations\\20260520215217_AddAuditLogTable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T21:52:18.239Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuditLog.cs",
+              "DocumentMoniker": "C:\\AnA_AML_System\\AMLSystem.API\\Models\\AuditLog.cs",
+              "RelativeDocumentMoniker": "Models\\AuditLog.cs",
+              "ToolTip": "C:\\AnA_AML_System\\AMLSystem.API\\Models\\AuditLog.cs",
+              "RelativeToolTip": "Models\\AuditLog.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T21:45:43.208Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\AnA_AML_System\\AMLSystem.API\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\AnA_AML_System\\AMLSystem.API\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABAAAAAgMzMzMzMrwBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T13:22:33.051Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TransactionsController.cs",
+              "DocumentMoniker": "C:\\AnA_AML_System\\AMLSystem.API\\Controllers\\TransactionsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TransactionsController.cs",
+              "ToolTip": "C:\\AnA_AML_System\\AMLSystem.API\\Controllers\\TransactionsController.cs",
+              "RelativeToolTip": "Controllers\\TransactionsController.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAIwHQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T11:52:19.064Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "20260520114503_AddTransactionTable.cs",
+              "DocumentMoniker": "C:\\AnA_AML_System\\AMLSystem.API\\Migrations\\20260520114503_AddTransactionTable.cs",
+              "RelativeDocumentMoniker": "Migrations\\20260520114503_AddTransactionTable.cs",
+              "ToolTip": "C:\\AnA_AML_System\\AMLSystem.API\\Migrations\\20260520114503_AddTransactionTable.cs",
+              "RelativeToolTip": "Migrations\\20260520114503_AddTransactionTable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T11:45:03.669Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\AnA_AML_System\\AMLSystem.API\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
+              "ToolTip": "C:\\AnA_AML_System\\AMLSystem.API\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAowA0AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T11:43:35.159Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Transaction.cs",
+              "DocumentMoniker": "C:\\AnA_AML_System\\AMLSystem.API\\Models\\Transaction.cs",
+              "RelativeDocumentMoniker": "Models\\Transaction.cs",
+              "ToolTip": "C:\\AnA_AML_System\\AMLSystem.API\\Models\\Transaction.cs",
+              "RelativeToolTip": "Models\\Transaction.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAywB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T11:41:58.439Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

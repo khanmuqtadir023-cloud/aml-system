@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet, RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common'; // 👈 [class.hidden] aur conditional classes ke liye zaroori hai
+import { CommonModule } from '@angular/common'; 
 
 @Component({
   selector: 'app-sidebar',
@@ -11,7 +11,12 @@ import { CommonModule } from '@angular/common'; // 👈 [class.hidden] aur condi
 })
 export class SidebarComponent {
   isSidebarClosed = false;
+  
+  // Watchlist Menu State
   isMenuClosed = false;
+  
+  // Transaction Menu State (By default band rakha hai)
+  isTxnMenuClosed = true;
 
   toggleSidebar() {
     this.isSidebarClosed = !this.isSidebarClosed;
@@ -19,5 +24,9 @@ export class SidebarComponent {
 
   toggleMenu() {
     this.isMenuClosed = !this.isMenuClosed;
+  }
+
+  toggleTxnMenu() {
+    this.isTxnMenuClosed = !this.isTxnMenuClosed;
   }
 }
